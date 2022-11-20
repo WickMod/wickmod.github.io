@@ -6,6 +6,74 @@
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
+.spiral{
+	animation: SpinLoad 2s;
+	animation-fill-mode: forwards;
+	scale:3;
+}
+.spiraldiv{
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	pointer-events:none;
+	
+}
+.centered {
+	animation: FadeLoad 2s;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	animation-fill-mode: forwards;
+	text-align:center;
+	
+  }
+@keyframes SpinLoad{
+	0%{
+		transform: rotate(-1000deg);
+		opacity:1;
+	}
+	30%{
+		scale:3;
+	}
+	50%{
+		opacity: 1;
+		scale:1;
+	}
+	70%{
+		opacity:0;
+	}
+	99%{
+		transform: rotate(0deg);
+		opacity:0;
+	}
+	100%{
+		display: none;
+		opacity:0;
+		transform: rotate(0deg);
+
+	}
+}
+@keyframes FadeLoad{
+	0%{
+		opacity:1;
+	}
+	50%{
+		opacity:1;
+	}
+	70%{
+		opacity:0;
+	}
+	71%{
+		display: none;
+		opacity:0;
+	}
+	100%{
+		opacity:0;
+		display:none;
+	}
+}
 
 html, body, div, span, applet, object,
 iframe, h1, h2, h3, h4, h5, h6, p, blockquote,
@@ -133,7 +201,7 @@ input, select, textarea {
 		font-style: italic;
 	}
 	h3, h2{
-		color:rgb(255,153,0);
+		color:rgb(255,153,0);/*Orange*/
 		font-weight: 700;
 
 	}
@@ -2271,8 +2339,8 @@ input, select, textarea {
 	#main {
 		position: relative;
 		background: #21152d url("images/bg02.png");
-		border-top: solid 1px rgb(255,153,0);
-		border-bottom: solid 1px rgb(255,153,0);
+		border-top: solid 1px #f2e0c7; 
+		border-bottom: solid 1px #f2e0c7; 
 
 		padding: 4em 0 4em 0;
 	}
