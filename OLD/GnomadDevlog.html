@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Development Blog</title>
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .entry-container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .entry-content {
+            max-width: 100%;
+        }
+
+        .entry-image {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .popup-content {
+            background: #fff;
+            max-width: 800px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            position: relative;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+            font-size: 20px;
+            color: #333;
+        }
+
+        .entry-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .entry-list-item {
+            margin-bottom: 20px;
+        }
+
+        .thumbnail {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .thumbnail-container {
+            max-width: 200px;
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Landing Page with Entry List -->
+    <ul class="entry-list">
+        <li class="entry-list-item">
+            <div class="thumbnail-container">
+                <img class="thumbnail" src="thumbnail1.jpg" alt="Entry 1 Thumbnail">
+            </div>
+            <a href="#" onclick="openPopup('entry1')">Entry 1</a> - Description of Entry 1
+        </li>
+        <li class="entry-list-item">
+            <div class="thumbnail-container">
+                <img class="thumbnail" src="thumbnail2.jpg" alt="Entry 2 Thumbnail">
+            </div>
+            <a href="#" onclick="openPopup('entry2')">Entry 2</a> - Description of Entry 2
+        </li>
+        <!-- Add more entries as needed -->
+    </ul>
+
+    <!-- Blog Entry Popup -->
+    <div id="entry1" class="popup">
+        <div class="popup-content">
+            <span class="close-btn" onclick="closePopup('entry1')">&times;</span>
+            <div class="entry-container">
+                <h2>Entry 1</h2>
+                <div class="entry-content">
+                    <p>This is the content of Entry 1.</p>
+                    <img class="entry-image" src="entry1_image.jpg" alt="Entry 1 Image">
+                    <p>More text goes here...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="entry2" class="popup">
+        <div class="popup-content">
+            <span class="close-btn" onclick="closePopup('entry2')">&times;</span>
+            <div class="entry-container">
+                <h2>Entry 2</h2>
+                <div class="entry-content">
+                    <p>This is the content of Entry 2.</p>
+                    <img class="entry-image" src="entry2_image.jpg" alt="Entry 2 Image">
+                    <p>More text goes here...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript for Popup Functionality -->
+    <script>
+        function openPopup(entryId) {
+            document.getElementById(entryId).style.display = "flex";
+        }
+
+        function closePopup(entryId) {
+            document.getElementById(entryId).style.display = "none";
+        }
+    </script>
+
+</body>
+
+</html>
