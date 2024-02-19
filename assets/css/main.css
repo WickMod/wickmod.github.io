@@ -42,3 +42,51 @@
 		padding-bottom:0em;
 	}
 
+/*HEADER*/
+.header {
+
+}
+.header h1{
+	font-size:10em;
+	margin-top: 0;
+	margin-bottom: 0;
+	cursor:pointer;
+}
+
+.header h2{
+	font-size:5em;
+	text-align: right;
+	margin-top: 0;
+	margin-bottom: 0;
+	cursor:pointer;
+}
+/*https://www.w3schools.com/howto/howto_css_button_group.asp*/
+.header .btn-group{
+	align-items: center;
+}
+
+.header .btn-group button{
+	background-color: green;
+	border: 0px; 
+	color: orange;
+	padding: .1em .1em;
+	cursor: pointer;
+	float: left;
+	width:33.33%;
+}
+
+.header .btn-group button:not(:last-child) {
+	border-right: none; /* Prevent double borders */
+  }
+  
+  /* Clear floats (clearfix hack) */
+  .header .btn-group:after {
+	content: "";
+	clear: both;
+	display: table;
+  }
+  
+  /* Add a background color on hover */
+  .header .btn-group button:hover {
+	background-color: #3e8e41;
+  }
