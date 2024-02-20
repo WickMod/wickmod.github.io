@@ -6,11 +6,8 @@ import sitemap from '@astrojs/sitemap';
 const SERVER_PORT = 3000;
 const LOCALHOST_URL = `http://localhost:${SERVER_PORT}`
 const LIVE_URL = 'https://wickmod.github.io'
-let BASE_URL = LOCALHOST_URL
+let BASE_URL = LIVE_URL
 
-if (isBuild){
-	BASE_URL=LIVE_URL;
-}
 
 // https://astro.build/config
 export default defineConfig({
