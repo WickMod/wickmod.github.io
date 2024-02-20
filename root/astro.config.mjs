@@ -7,4 +7,5 @@ import sitemap from '@astrojs/sitemap';
 export default defineConfig({
 	site: 'https://wickmod.github.io',
 	integrations: [mdx(), sitemap()],
+	base:"../BUILD",
 });
