@@ -1,0 +1,51 @@
+---
+let {title,image, desc1,desc2,desc3,target} = Astro.props;
+---
+
+
+<a href={target}>
+<div>
+    <img src={image} alt={title}>
+    <ul>
+        <li>{desc1}</li>
+        <li>{desc2}</li>
+        <li>{desc3}</li>
+    </ul>
+</div>
+</a>
+
+
+<style>
+div{
+	cursor:pointer;
+	size: 10em;
+	padding: 0.5em;
+	box-shadow:  0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+img{
+	max-width: 10em;
+	height: auto;
+	margin: -0.5em;
+}
+
+h4{
+    margin-top:0em;
+    margin-bottom:0em;
+}
+ul{
+    margin-top:0em;
+    margin-bottom:0em;
+    
+    padding-top:0em;
+    padding-bottom:0em;
+}
+
+a{
+    text-decoration: none;
+}
+li{
+    color: rgba(var(--black), 100%);
+}
+
+</style>

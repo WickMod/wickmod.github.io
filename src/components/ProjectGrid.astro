@@ -1,0 +1,25 @@
+---
+import ProjectBox from "./ProjectBox.astro"
+---
+
+<div>
+    <ProjectBox 
+    title="Gnomad" 
+    image="/blog-placeholder-1.jpg" 
+    desc1="Test"
+    desc2="test2"
+    desc3="test3"
+    target="about">
+    </ProjectBox>
+</div>
+
+
+<style>
+div{
+	display: grid;
+	grid-template-columns: 10em 10em 10em;
+	grid-template-rows: 10em 10em 10em;
+	padding: 10px;
+	gap: 0.5em;
+  }
+</style>
