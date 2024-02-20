@@ -1,11 +1,14 @@
 ---
-let {title,image, desc1,desc2,desc3,target} = Astro.props;
+let {title,image,logoIMG, engineIMG, engineLang,desc1,desc2,desc3,target} = Astro.props;
 ---
 
 
 <a href={target}>
-<div>
-    <img src={image} alt={title}>
+<div class="project-box">
+    <img src={logoIMG} alt="" class="logo-img">
+    <img src={engineIMG} alt="" class="engine-img">
+    <img src={image} alt={title} class="BG-img">
+    <p>{engineLang}</p>
     <ul>
         <li>{desc1}</li>
         <li>{desc2}</li>
@@ -16,17 +19,17 @@ let {title,image, desc1,desc2,desc3,target} = Astro.props;
 
 
 <style>
-div{
-	cursor:pointer;
-	size: 10em;
-	padding: 0.5em;
+.project-box{
+    border-radius: 0.5%;
+    position:relative;
 	box-shadow:  0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-img{
-	max-width: 10em;
-	height: auto;
-	margin: -0.5em;
+.BG-img{
+    border-radius: 0.5%;
+    width:100%;
+    height:auto;
+    object-fit:fill;
 }
 
 h4{
@@ -47,5 +50,29 @@ a{
 li{
     color: rgba(var(--black), 100%);
 }
+.logo-img{
+    position: absolute;
+    left:0;
+    right:0;
+    margin:0.1em;   
+    width:35%;  
+    height:auto;
+}
 
-</style>
+.engine-img{
+    position: absolute;
+    bottom:45%;
+    right:0%;
+    margin-right:0.5em;
+    width:10%;
+    height:auto;
+}
+
+p{
+    position: absolute;
+    bottom:32%;
+    right:0%;
+    margin-right:0.4em;
+    height:auto;
+    justify-content:right;
+}
