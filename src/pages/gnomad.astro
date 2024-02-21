@@ -1,0 +1,148 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import { getCollection } from 'astro:content';
+import FormattedDate from '../components/FormattedDate.astro';
+
+const posts = (await getCollection('blog')).sort(
+	(a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
+);
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<Header />
+        <img src="GnomadBanner.png" alt="" class="banner">
+		<main>
+            <div>
+                <h1>Wander the twisting reaches </h1>
+                <h4>of this whimsical fairytale world overflowing with</h4>
+                <h4> bouncing combat, outlandish characters,</h4>
+                <h4> and more loot than you can carry!</h4>
+
+                <h3>Gnomad</h3>
+                <p>is a hand-drawn 2D metroidvania platformer being developed by Team Tomte.
+                    We are a team of 3 undergraduate students working to craft an expansive world
+                    by combining our artistic and technical abilities.
+                </p>
+                <h3>My Role</h3>
+                <p>on Gnomad is the <b>project lead<b/>, but on a team this size, we all do a bit of everything.
+                     technical artist, and visual artist. </p>
+            </div>
+            <!-- 
+			<section>
+				<ul>
+					{
+						posts.map((post) => (
+							<li>
+								<a href={`/blog/${post.slug}/`}>
+									<img width={720} height={360} src={post.data.heroImage} alt="" />
+									<h4 class="title">{post.data.title}</h4>
+									<p class="date">
+										<FormattedDate date={post.data.pubDate} />
+									</p>
+								</a>
+							</li>
+						))
+					}
+				</ul>
+			</section>
+            -->
+		</main>
+        <img src="GnomadGrass.png" alt="" class="border-flourish">
+		<Footer />
+	</body>
+</html>
+
+
+<style>
+    body{
+        cursor:url('GnomadPointer.png'), auto;
+    }
+    main {
+        width: 45%;
+    }
+    ul {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+    ul li {
+        width: calc(50% - 1rem);
+    }
+    ul li * {
+        text-decoration: none;
+        transition: 0.2s ease;
+        /*change this if selection cursor is added*/
+        cursor:url('GnomadPointer.png'), auto;
+    }
+    ul li:first-child {
+        width: 100%;
+        margin-bottom: 1rem;
+        text-align: center;
+    }
+    ul li:first-child img {
+        width: 100%;
+    }
+    ul li:first-child .title {
+        font-size: 2.369rem;
+    }
+    ul li img {
+        margin-bottom: 0.5rem;
+        border-radius: 1%;
+    }
+    ul li a {
+        display: block;
+    }
+    .title {
+        margin: 0;
+        color: rgb(var(--black));
+        line-height: 1;
+    }
+    .date {
+        margin: 0;
+        color: rgb(var(--gray));
+    }
+    ul li a:hover h4,
+    ul li a:hover .date {
+        color: rgb(var(--accent));
+    }
+    ul a:hover img {
+        box-shadow: var(--box-shadow);
+    }
+    .border-flourish{
+        position:fixed;
+        bottom:-50%;
+        width:100%;
+        height:auto;
+    }
+    .banner{
+        object-fit: cover;
+        border-radius: 0%;
+        width: 100%;
+    }
+    @media (max-width: 720px) {
+        ul {
+            gap: 0.5em;
+        }
+        ul li {
+            width: 100%;
+            text-align: center;
+        }
+        ul li:first-child {
+            margin-bottom: 0;
+        }
+        ul li:first-child .title {
+            font-size: 1.563em;
+        }
+    }
+</style>
