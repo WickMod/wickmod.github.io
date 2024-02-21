@@ -21,26 +21,54 @@ const posts = (await getCollection('blog')).sort(
         <img src="GnomadBanner.png" alt="" class="banner">
 		<main>
             <div>
-                <h1>Wander the twisting reaches </h1>
-                <h4>of this whimsical fairytale world overflowing with</h4>
-                <h4> bouncing combat, outlandish characters,</h4>
-                <h4> and more loot than you can carry!</h4>
+                <h5>Wander the twisting reaches 
+                    of this whimsical fairytale world overflowing with
+                    bouncing combat, outlandish characters,
+                    and more loot than you can carry!</h5>
+
+                <p style="text-align:center">
+                    <iframe width="420" height="315"
+                    src="https://youtu.be/jOFa_hshM4Qautoplay=1&mute=1controls=0">
+                    </iframe>
+                </p>
 
                 <h3>Gnomad</h3>
+
                 <p>is a hand-drawn 2D metroidvania platformer being developed by Team Tomte.
                     We are a team of 3 undergraduate students working to craft an expansive world
                     by combining our artistic and technical abilities.
                 </p>
+
                 <h3>My Role</h3>
-                <p>on Gnomad is the <b>project lead<b/>, but on a team this size, we all do a bit of everything.
-                     technical artist, and visual artist. </p>
+                <p>
+                    On Gnomad is the <b>project lead</b>, but most of my day to day work consists 
+                    of <b>Technical Art</b>, <b>Editor System Design</b>, and <b>illustration</b>.
+                    My main tasks on the project were
+                </p>
+
+                <ul class="bullet-list">
+                    <li>Establish a pipline for 2D sprite assets</li>
+                    <li>Create abstract templates for interactive prop prefabs</li>
+                    <li>Design and implement an environment editor system in C# with a visual interface</li>
+                    <li>Illustrate and animate hundreds of props and characters</li>
+                    <li>Manage project timeline with schedules and project management tools like Trello</li>
+                </ul>
+
+                <h3>Technical Art</h3>
+                <p>The environment editor system for Gnomad needs to be robust and flexible. Managing thousands of sprites between nine different Z layers is complicated. This system handles placement procedure, rendering layers, post processing effects, lighting layers, sprite seeding, and prop painting.
+                    Gnomad is being developed by a very small team (3 strong). I am the lone visual artist as well as the project leader. Between developing player attacks, asset pipelines, time management, and publicity, there is not much time for drawing new assets. I knew this from the start, so I chose an art style that would be fast to implement. Flat colors and uniform lines look okay on their own, but can be enhanced greatly by the lighting/effect systems, and by the jittering of modifying values such as hue, saturation, rotation, etc.
+                    The purpose of the environment editor is therefore twofold: handle prop management for environment creation, and add procedural variation to the props as they are placed.
+                    </p>
+                <h2>
+                
+                </h2>
             </div>
             <!-- 
 			<section>
 				<ul>
 					{
 						posts.map((post) => (
-							<li>
+							<li class="blog-list">
 								<a href={`/blog/${post.slug}/`}>
 									<img width={720} height={360} src={post.data.heroImage} alt="" />
 									<h4 class="title">{post.data.title}</h4>
@@ -68,7 +96,7 @@ const posts = (await getCollection('blog')).sort(
     main {
         width: 45%;
     }
-    ul {
+    .blog-list {
         display: flex;
         flex-wrap: wrap;
         gap: 2rem;
@@ -76,31 +104,31 @@ const posts = (await getCollection('blog')).sort(
         margin: 0;
         padding: 0;
     }
-    ul li {
+    .blog-list li {
         width: calc(50% - 1rem);
     }
-    ul li * {
+    .blog-list li * {
         text-decoration: none;
         transition: 0.2s ease;
         /*change this if selection cursor is added*/
         cursor:url('GnomadPointer.png'), auto;
     }
-    ul li:first-child {
+    .blog-list li:first-child {
         width: 100%;
         margin-bottom: 1rem;
         text-align: center;
     }
-    ul li:first-child img {
+    .blog-list li:first-child img {
         width: 100%;
     }
-    ul li:first-child .title {
+    .blog-list li:first-child .title {
         font-size: 2.369rem;
     }
-    ul li img {
+    .blog-list li img {
         margin-bottom: 0.5rem;
         border-radius: 1%;
     }
-    ul li a {
+    .blog-list li a {
         display: block;
     }
     .title {
@@ -112,11 +140,11 @@ const posts = (await getCollection('blog')).sort(
         margin: 0;
         color: rgb(var(--gray));
     }
-    ul li a:hover h4,
-    ul li a:hover .date {
+    .blog-list li a:hover h4,
+    .blog-list li a:hover .date {
         color: rgb(var(--accent));
     }
-    ul a:hover img {
+    .blog-list a:hover img {
         box-shadow: var(--box-shadow);
     }
     .border-flourish{
@@ -130,18 +158,19 @@ const posts = (await getCollection('blog')).sort(
         border-radius: 0%;
         width: 100%;
     }
+
     @media (max-width: 720px) {
-        ul {
+        .blog-list {
             gap: 0.5em;
         }
-        ul li {
+        .blog-list li {
             width: 100%;
             text-align: center;
         }
-        ul li:first-child {
+        .blog-list li:first-child {
             margin-bottom: 0;
         }
-        ul li:first-child .title {
+        .blog-list li:first-child .title {
             font-size: 1.563em;
         }
     }
