@@ -2,10 +2,11 @@
 import ProjectBox from "./ProjectBox.astro"
 ---
 
-<div>
+<ul>
+  <li>
     <ProjectBox 
     title="Gnomad" 
-    image="/GnomadTN.png" 
+    image="/GnomadTN.jpg" 
     logoIMG="/GnomadLogoTN.png"
     engineIMG="/UnityLogo.png"
     engineLang="C#"
@@ -14,7 +15,9 @@ import ProjectBox from "./ProjectBox.astro"
     desc3="test3"
     target="gnomad">
     </ProjectBox>
+  </li>
 
+  <li>
     <ProjectBox 
     title="Biomorgs" 
     image="/BiomorgsTN.jpg" 
@@ -26,11 +29,12 @@ import ProjectBox from "./ProjectBox.astro"
     desc3="test3"
     target="biomorgs">
     </ProjectBox> 
+  </li>
 
     <!--
     <ProjectBox 
     title="Zombonk" 
-    image="/ZomBonkTN.png" 
+    image="/ZomBonkTN.jpg" 
     logoIMG="/ZomBonkLogoTN.png"
     engineIMG="/GodotLogo.png"
     engineLang="GD Script"
@@ -42,21 +46,19 @@ import ProjectBox from "./ProjectBox.astro"
     
     <ProjectBox 
     title="Trash Panda Party Pack" 
-    image="/TPPPTN.png" 
+    image="/TPPPTN.jpg" 
+    logoIMG="TPPPLogoTN.png"
     engineIMG="/UnityLogo.png"
     desc1="3D Modeling in Blender"
     desc2="Level Creation in Unity"
     desc3="Collaborative Level Design"
     target="tppp">
     </ProjectBox>    
-</div>
+  </u>
 
 
 <style>
 div{
-	display: grid;
-	grid-template-columns: auto auto auto%;
-	grid-template-rows: 10em;
 	padding: 10px;
 	gap: 0.5em;
   }
