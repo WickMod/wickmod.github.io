@@ -1,9 +1,11 @@
 ---
 import HeaderLink from './HeaderLink.astro';
+import LoadingScreen from './LoadingScreen.astro'
 import { SITE_TITLE } from '../consts';
 ---
 
 <header>
+	<LoadingScreen></LoadingScreen>
 	<nav>
 		<h1><a href="/">{SITE_TITLE}</a></h1>
 		<div class="internal-links">
