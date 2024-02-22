@@ -5,6 +5,9 @@ import Footer from '../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 import { getCollection } from 'astro:content';
 import FormattedDate from '../components/FormattedDate.astro';
+import { Image } from 'astro:assets';
+import grassBorder from '/public/GnomadGrass.png';
+import banner from '/public/GnomadBanner.png';
 
 const posts = (await getCollection('blog')).sort(
 	(a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
@@ -18,7 +21,7 @@ const posts = (await getCollection('blog')).sort(
 	</head>
 	<body>
 		<Header />
-        <img src="GnomadBanner.png" alt="" class="banner">
+        <Image src={banner} alt="" class="banner"></Image>
 		<main>
             <div>
                 <h5>Wander the twisting reaches 
@@ -93,7 +96,7 @@ const posts = (await getCollection('blog')).sort(
 			</section>
             -->
 		</main>
-        <img src="GnomadGrass.png" alt="" class="border-flourish">
+        <Image src={grassBorder} alt="" class="border-flourish"/>
 		<Footer />
         <div style="margin:50px;"></div>
 	</body>
@@ -167,7 +170,7 @@ const posts = (await getCollection('blog')).sort(
     }
     .border-flourish{
         position:fixed;
-        bottom:-50%;
+        bottom:-57%;
         width:100%;
         height:auto;
     }

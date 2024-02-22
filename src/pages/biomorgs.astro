@@ -5,7 +5,8 @@ import Footer from '../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 import { getCollection } from 'astro:content';
 import FormattedDate from '../components/FormattedDate.astro';
-
+import { Image } from 'astro:assets';
+import logo from '/public/BiomorgsLogoTN.png';
 const posts = (await getCollection('blog')).sort(
 	(a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
 );
@@ -27,7 +28,7 @@ const posts = (await getCollection('blog')).sort(
                     src="https://youtube.com/embed/jOFa_hshM4Q?autoplay=1&mute=1&controls=0">
                     </iframe>
                 </p> -->
-                <img src="BiomorgsLogoTN.png" alt="">
+                <Image src={logo} alt=""/>
                 <h5><i>Who</i> will defeat the ever expanding, solar system swallowing, galaxy gargling, freaky, evil Biomorgs!?!?!?!? </h5>
                 <p>These abominable alien astronauts have been on a been on a nonstop 
                     rampage across the reaches of the galaxy. Every planet in their path is conquered,

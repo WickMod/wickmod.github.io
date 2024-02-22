@@ -5,17 +5,19 @@ import Footer from '../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 import { getCollection } from 'astro:content';
 import FormattedDate from '../components/FormattedDate.astro';
+import { Image } from 'astro:assets';
+import meIMG from '/public/MeWide.png';
 ---
 
 <!doctype html>
 <html lang="en">
 	<head>
-		<BaseHead title="About Me" description={SITE_DESCRIPTION} />
+		<BaseHead title="About Me" description={SITE_DESCRIPTION} />	
 	</head>
 	<body>
 		<Header/>
 		<main>
-			<p style="text-align: center;"><img src="MeWide.png" alt="" style="width:100%; height:auto;"></p>
+			<p style="text-align: center;"><Image src={meIMG} alt="" style="width:100%; height:auto;" ></Image></p>
             <div>
                 <h1>About Me</h1>
                 <p>Equal parts technical and creative, I’m a  cross-discipline game developer.</p>
