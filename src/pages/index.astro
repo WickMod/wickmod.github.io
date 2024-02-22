@@ -2,13 +2,15 @@
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import ProjectGrid from '../components/ProjectGrid.astro'
+import ProjectGrid from '../components/ProjectGrid.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import LoadingScreen from '../components/LoadingScreen.astro';
 ---
 
 <!doctype html>
 <html lang="en">
 	<head>
+		<LoadingScreen></LoadingScreen>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 	</head>
 	<body>
