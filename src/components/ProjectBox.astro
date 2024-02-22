@@ -4,9 +4,8 @@ let {title,image,logoIMG, engineIMG, engineLang,desc1,desc2,desc3,target} = Astr
 
 <a href={target}>
     <div class="project-box">
-        
-        <!-- <img src={logoIMG} alt="" class="logo-img">
-        <img src={engineIMG} alt="" class="engine-img">-->
+        <img src={logoIMG} alt="" class="logo-img">
+        <img src={engineIMG} alt="" class="engine-img">
         <img src={image} alt={title} class="BG-img">
         <p>{engineLang}</p>
         <ul>
@@ -20,12 +19,10 @@ let {title,image,logoIMG, engineIMG, engineLang,desc1,desc2,desc3,target} = Astr
 <style>
 .project-box{
     border-radius: 0.5%;
-    /*position:relative;*/
+    position:relative;
 	box-shadow:  0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    width:500px;
-    height:500px;
+    height:100%;
 }
-
 .BG-img{
     border-radius: 0.5%;
     width:100%;
@@ -66,7 +63,6 @@ li{
     width:10%;
     height:auto;
 }
-
 p{
     position: absolute;
     bottom:32%;
