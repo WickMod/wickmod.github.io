@@ -1,14 +1,17 @@
 ---
 import HeaderLink from './HeaderLink.astro';
+import LoadingScreen from './LoadingScreen.astro'
 import { SITE_TITLE } from '../consts';
 ---
 
 <header>
+	<LoadingScreen></LoadingScreen>
 	<nav>
 		<h1><a href="/">{SITE_TITLE}</a></h1>
 		<div class="internal-links">
 			<HeaderLink href="/">Projects</HeaderLink>
 			<HeaderLink href="/blog">Dev Log</HeaderLink>
+			<HeaderLink href="/concept-art">Concept Art</HeaderLink>
 			<HeaderLink href="/about">About Me</HeaderLink>
 		</div>
 		<div class="social-links">
@@ -28,7 +31,7 @@ import { SITE_TITLE } from '../consts';
 	header {
 		margin: 0;
 		padding: 0 1em;
-		background: rgb(216, 91, 71);
+		background: var(--header-bg);
 		box-shadow: 0 2px 8px rgba(var(--black), 5%);
 	}
 	h1 {	
@@ -37,7 +40,8 @@ import { SITE_TITLE } from '../consts';
 		animation: none; /* Disable the keyframe animation on hover */
 	}
 	h1:hover{
-		animation: changeFont 5s infinite;
+		/*animation: changeFont 5s infinite;
+		color: aliceblue;*/
 	}
 
 
@@ -78,26 +82,15 @@ import { SITE_TITLE } from '../consts';
 		}
 	}
 	@keyframes changeFont {
-		0% { font-family: "Zilla Slab", serif; }
-      5% { font-family: "Bungee Outline", cursive; }
-      10% { font-family: "Cutive Mono", monospace; }
-      15% { font-family: "Baloo Tammudu 2", cursive; }
-      20% { font-family: "Monoton", cursive; }
-      25% { font-family: "Knewave", cursive; }
-      30% { font-family: "Press Start 2P", cursive; }
-      35% { font-family: "Creepster", cursive; }
-      40% { font-family: "Faster One", cursive; }
+      5% { font-family: "Bungee Outline", serif; }
+      15% { font-family: "Baloo Tammudu 2", serif; }
+      25% { font-family: "Knewave", serif; }
+      35% { font-family: "Creepster", serif; }
       45% { font-family: "Orbitron", sans-serif; }
-      50% { font-family: "Jokerman", cursive; }
-      55% { font-family: "Lobster", cursive; }
-      60% { font-family: "Permanent Marker", cursive; }
-      65% { font-family: "Shojumaru", cursive; }
-      70% { font-family: "Stalinist One", cursive; }
-      75% { font-family: "Ultra", cursive; }
+      60% { font-family: "Permanent Marker", serif; }
+      70% { font-family: "Stalinist One", serif; }
       80% { font-family: "VT323", monospace; }
-      85% { font-family: "Yanone Kaffeesatz", sans-serif; }
-      90% { font-family: "Zeyada", cursive; }
-      95% { font-family: "Fredericka the Great", cursive; }
-      100% { font-family: "Permanent Marker", cursive; }
+      90% { font-family: "Zeyada", serif; }
+      100% { font-family: "Permanent Marker", serif; }
     }
 </style>

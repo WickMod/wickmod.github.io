@@ -24,9 +24,10 @@ import ProjectBox from "./ProjectBox.astro"
     desc1="Test"
     desc2="test2"
     desc3="test3"
-    target="about">
+    target="biomorgs">
     </ProjectBox> 
-    
+
+    <!--
     <ProjectBox 
     title="Zombonk" 
     image="/ZomBonkTN.png" 
@@ -36,17 +37,17 @@ import ProjectBox from "./ProjectBox.astro"
     desc1="Test"
     desc2="test2"
     desc3="test3"
-    target="about">
-    </ProjectBox>    
+    target="zombonk">
+    </ProjectBox>     -->
     
     <ProjectBox 
     title="Trash Panda Party Pack" 
     image="/TPPPTN.png" 
     engineIMG="/UnityLogo.png"
-    desc1="Test"
-    desc2="test2"
-    desc3="test3"
-    target="about">
+    desc1="3D Modeling in Blender"
+    desc2="Level Creation in Unity"
+    desc3="Collaborative Level Design"
+    target="tppp">
     </ProjectBox>    
 </div>
 
@@ -54,8 +55,8 @@ import ProjectBox from "./ProjectBox.astro"
 <style>
 div{
 	display: grid;
-	grid-template-columns: 10em 10em 10em;
-	grid-template-rows: 10em 10em 10em;
+	grid-template-columns: auto auto auto%;
+	grid-template-rows: 10em;
 	padding: 10px;
 	gap: 0.5em;
   }

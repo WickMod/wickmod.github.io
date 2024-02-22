@@ -14,7 +14,7 @@ const posts = (await getCollection('blog')).sort(
 <!doctype html>
 <html lang="en">
 	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+		<BaseHead title="Gnomad" description={SITE_DESCRIPTION} />
 	</head>
 	<body>
 		<Header />
@@ -27,8 +27,8 @@ const posts = (await getCollection('blog')).sort(
                     and more loot than you can carry!</h5>
 
                 <p style="text-align:center">
-                    <iframe width="640" height="360" frameborder="0"
-                    src="https://youtube.com/embed/jOFa_hshM4Q?autoplay=1&mute=1&controls=0">
+                    <iframe width="640" height="360" frameborder="0" style="cursor:url('GnomadPointer.png'), auto;"
+                    src="https://youtube.com/embed/jOFa_hshM4Q?autoplay=1&mute=1&loop=1">
                     </iframe>
                 </p>
 
@@ -46,19 +46,29 @@ const posts = (await getCollection('blog')).sort(
                     My main tasks on the project were
                 </p>
 
+
                 <ul class="bullet-list">
-                    <li>Establish a pipline for 2D sprite assets</li>
+                    <li>Establish a <b>pipline</b> for 2D sprite assets</li>
                     <li>Create abstract templates for interactive prop prefabs</li>
-                    <li>Design and implement an environment editor system in C# with a visual interface</li>
-                    <li>Illustrate and animate hundreds of props and characters</li>
+                    <li>Design and implement an <b>environment editor system</b> in <b>C#</b> with a visual interface</li>
+                    <li><b>Illustrate</b> and <b>animate</b> hundreds of props and characters</li>
                     <li>Manage project timeline with schedules and project management tools like Trello</li>
                 </ul>
 
                 <h3>Technical Art</h3>
-                <p>The environment editor system for Gnomad needs to be robust and flexible. Managing thousands of sprites between nine different Z layers is complicated. This system handles placement procedure, rendering layers, post processing effects, lighting layers, sprite seeding, and prop painting.
-                    Gnomad is being developed by a very small team (3 strong). I am the lone visual artist as well as the project leader. Between developing player attacks, asset pipelines, time management, and publicity, there is not much time for drawing new assets. I knew this from the start, so I chose an art style that would be fast to implement. Flat colors and uniform lines look okay on their own, but can be enhanced greatly by the lighting/effect systems, and by the jittering of modifying values such as hue, saturation, rotation, etc.
-                    The purpose of the environment editor is therefore twofold: handle prop management for environment creation, and add procedural variation to the props as they are placed.
-                    </p>
+                <p>
+                    The environment editor system for Gnomad needs to be robust and flexible. Managing thousands of sprites between nine different Z layers is complicated.
+                     This system handles placement procedure, rendering layers, post processing effects, lighting layers, sprite seeding, and prop painting.
+                    Gnomad is being developed by a very small team (3 strong). I am the lone visual artist as well as the project leader. Between developing player attacks,
+                     asset pipelines, time management, and publicity, there is not much time for drawing new assets. 
+                </p>
+                <p>
+                    I knew this from the start, so I chose an art style that
+                      would be fast to implement. Flat colors and uniform lines look okay on their own, but can be enhanced greatly by the lighting/effect systems, and by the
+                       jittering of modifying values such as hue, saturation, rotation, etc.
+                    The purpose of the environment editor is therefore twofold: handle prop management for environment creation,
+                     and add procedural variation to the props as they are placed.
+                </p>
                 <h2>
                 
                 </h2>
@@ -85,11 +95,26 @@ const posts = (await getCollection('blog')).sort(
 		</main>
         <img src="GnomadGrass.png" alt="" class="border-flourish">
 		<Footer />
+        <div style="margin:50px;"></div>
 	</body>
 </html>
 
 
 <style>
+     :root {
+	--base-color:#93c45b;
+	--base-shadow:#4f8f33;
+    --header-bg: rgb(255, 187, 0);
+	--accent: #cc352b;
+	--accent-dark: #661111;
+	--black: 15, 18, 25;
+	--gray: 96, 115, 159;
+	--gray-light: 229, 233, 240;
+	--gray-dark: 34, 41, 57;
+	--gray-gradient: var(--base-shadow), var(--base-color);
+	--box-shadow: 0 2px 6px rgba(var(--gray), 25%), 0 8px 24px rgba(var(--gray), 33%),
+		0 16px 32px rgba(var(--gray), 33%);
+}
     body{
         cursor:url('GnomadPointer.png'), auto;
     }

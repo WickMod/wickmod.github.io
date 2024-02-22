@@ -1,0 +1,130 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import { getCollection } from 'astro:content';
+import FormattedDate from '../components/FormattedDate.astro';
+import LoadingScreen from '../components/LoadingScreen.astro';
+
+const posts = (await getCollection('blog')).sort(
+	(a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
+);
+---
+
+<!doctype html>
+<html lang="en">
+    <LoadingScreen></LoadingScreen>
+	<head>
+		<BaseHead title="Concept Art" description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<Header />
+		<main>
+            <h1>Concept Art</h1>
+            <p style="text-align:center"> <img src="ConceptArtHome.jpg" style="width:80%" alt=""> </p>
+            <p>
+                I'm experienced in lost of different areas of game development, including concept art.
+                My background as an illustrator allows me to communicate and ideate my ideas more effecively. 
+                My creative experience allows me to work closely and communicate effectively with artist.
+                I can 
+            </p>
+            <p style="text-align:center"> <img src="ConceptArtVehicle.jpg" style="width:80%" alt=""> </p>
+
+            <p>
+                Find the rest of my <b>concept art</b> portfolio <b><a href="https://elijah_wickerham.artstation.com/"target="_blank"> here!</a></b><br>
+                Or see my watercolor illustrations <b><a href="https://www.instagram.com/elijahwickerham/"target="_blank"> here.</a></b>
+            </p>
+		</main>
+		<Footer />
+        <div style="margin:50px;"></div>
+	</body>
+</html>
+
+
+<style>
+    body{
+        cursor:url('GnomadPointer.png'), auto;
+    }
+    main {
+        width: 45%;
+    }
+    .blog-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+    .blog-list li {
+        width: calc(50% - 1rem);
+    }
+    .blog-list li * {
+        text-decoration: none;
+        transition: 0.2s ease;
+        /*change this if selection cursor is added*/
+        cursor:url('GnomadPointer.png'), auto;
+    }
+    .blog-list li:first-child {
+        width: 100%;
+        margin-bottom: 1rem;
+        text-align: center;
+    }
+    .blog-list li:first-child img {
+        width: 100%;
+    }
+    .blog-list li:first-child .title {
+        font-size: 2.369rem;
+    }
+    .blog-list li img {
+        margin-bottom: 0.5rem;
+        border-radius: 1%;
+    }
+    .blog-list li a {
+        display: block;
+    }
+    .title {
+        margin: 0;
+        color: rgb(var(--black));
+        line-height: 1;
+    }
+    .date {
+        margin: 0;
+        color: rgb(var(--gray));
+    }
+    .blog-list li a:hover h4,
+    .blog-list li a:hover .date {
+        color: rgb(var(--accent));
+    }
+    .blog-list a:hover img {
+        box-shadow: var(--box-shadow);
+    }
+    .border-flourish{
+        position:fixed;
+        bottom:-50%;
+        width:100%;
+        height:auto;
+    }
+    .banner{
+        object-fit: cover;
+        border-radius: 0%;
+        width: 100%;
+    }
+
+    @media (max-width: 720px) {
+        .blog-list {
+            gap: 0.5em;
+        }
+        .blog-list li {
+            width: 100%;
+            text-align: center;
+        }
+        .blog-list li:first-child {
+            margin-bottom: 0;
+        }
+        .blog-list li:first-child .title {
+            font-size: 1.563em;
+        }
+    }
+</style>

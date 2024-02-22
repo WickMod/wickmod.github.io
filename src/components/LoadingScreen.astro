@@ -1,0 +1,91 @@
+    <div class="spiraldiv">
+        <img class="spiral" src="Spiral.jpg" >
+        <h1 class="centered" id="hireme">
+            <p>HIRE<br><br>ME</p>
+        </h1>
+    </div>
+
+
+<style>
+h1{
+    z-index: 10000;
+    color:rgb(255, 157, 29);
+    font-size:150px;
+}
+.spiral{
+    z-index: 10000;
+    animation: SpinLoad 1s;
+    animation-fill-mode: forwards;
+    scale:7;
+}
+.spiraldiv{
+    object-fit:none;
+    z-index: 10000;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	pointer-events:none;
+	
+}
+.centered {
+    z-index: 10000;
+	animation: FadeLoad 1s;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	animation-fill-mode: forwards;
+	text-align:center;
+	
+  }
+@keyframes SpinLoad{
+	0%{
+		transform: rotate(-1000deg);
+		opacity:1;
+	}
+	50%{
+		opacity: 1;
+	}
+	70%{
+		opacity:0;
+		scale:15;
+	}
+	99%{
+		transform: rotate(0deg);
+		opacity:0;
+	}
+	100%{
+		display: none;
+		opacity:0;
+		transform: rotate(0deg);
+
+	}
+}
+@keyframes FadeLoad{
+	0%{
+		opacity:0;
+	}
+    10%{
+        opacity: 1;
+    }
+	50%{
+		opacity:1;
+	}
+    60%{
+        opacity: 0.5;
+    }
+	70%{
+		opacity:0;
+	}
+	71%{
+		display: none;
+		opacity:0;
+	}
+	100%{
+		opacity:0;
+		display:none;
+	}
+}
+
+</style>

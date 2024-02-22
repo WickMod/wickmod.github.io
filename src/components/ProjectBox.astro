@@ -2,22 +2,20 @@
 let {title,image,logoIMG, engineIMG, engineLang,desc1,desc2,desc3,target} = Astro.props;
 ---
 
-
 <a href={target}>
-<div class="project-box">
-    
-    <!-- <img src={logoIMG} alt="" class="logo-img">
-    <img src={engineIMG} alt="" class="engine-img">-->
-    <img src={image} alt={title} class="BG-img">
-    <p>{engineLang}</p>
-    <ul>
-        <li>{desc1}</li>
-        <li>{desc2}</li>
-        <li>{desc3}</li>
-    </ul>
-</div>
+    <div class="project-box">
+        
+        <!-- <img src={logoIMG} alt="" class="logo-img">
+        <img src={engineIMG} alt="" class="engine-img">-->
+        <img src={image} alt={title} class="BG-img">
+        <p>{engineLang}</p>
+        <ul>
+            <li>{desc1}</li>
+            <li>{desc2}</li>
+            <li>{desc3}</li>
+        </ul>
+    </div>
 </a>
-
 
 <style>
 .project-box{

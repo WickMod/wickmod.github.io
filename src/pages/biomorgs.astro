@@ -1,0 +1,159 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import { getCollection } from 'astro:content';
+import FormattedDate from '../components/FormattedDate.astro';
+
+const posts = (await getCollection('blog')).sort(
+	(a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
+);
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title="Biomorgs" description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<Header/>
+		<main>
+            <div>
+
+                <!--
+                <p style="text-align:center">
+                    <iframe width="640" height="360" frameborder="0"
+                    src="https://youtube.com/embed/jOFa_hshM4Q?autoplay=1&mute=1&controls=0">
+                    </iframe>
+                </p> -->
+                <img src="BiomorgsLogoTN.png" alt="">
+                <h5><i>Who</i> will defeat the ever expanding, solar system swallowing, galaxy gargling, freaky, evil Biomorgs!?!?!?!? </h5>
+                <p>These abominable alien astronauts have been on a been on a nonstop 
+                    rampage across the reaches of the galaxy. Every planet in their path is conquered,
+                     colonized, and consumed. YOU must play as Tuff Butts, the uber strong super human
+                      super soldier sent deep into space to single handedly stop these aliens.
+                    How? By kicking every single one of their asses (or equivalent thereof) 
+                    and sending them back to the singularity they crawled out of!</p>
+                <h4>What it is</h4>
+                <p> Biomorgs is a first person shooter game-prototype built in <b>Unreal Engine 5</b>. 
+                    While the 
+                    game where They are establishing their base through an AI driven RTS style system.
+                    Each level contains a standard map, with bases that evolve differently each time you play.
+                     The player must choose which order to take out the bases in, employing as much or as little strategy as desired.
+                      Cut off their resource drones? Sure! Sneak in and blow up their turrets?
+                       Why not! Walk right in the front door and shotgun each alien in the head? Now we're talking!</p>
+
+                <h4>What I did</h4>
+                <p>I built this prototype in Unreal Engine 5 over the span of a month. </p>
+                <ul class="bullet-list">
+                    <li>Worked with UE5 blueprints to design and implement a base building system used by the enemy AI.</li>
+                    <li>Designed and balanced interactions between resource gathering and base building features.</li>
+                    <li>Used built in environment and foliage editors to create 3 playable maps.</li>
+                </ul>
+            </div>
+		</main>
+		<Footer />
+	</body>
+</html>
+
+
+<style>
+     :root {
+	--base-color:#140614;
+	--base-shadow:#000000;
+	--accent: #fbff00;
+	--accent-dark: #ff5100;
+	--black: 255, 255, 255;
+	--gray: 96, 115, 159;
+	--gray-light: 229, 233, 240;
+	--gray-dark: 200, 200, 200;
+	--gray-gradient: var(--base-shadow), var(--base-color);
+	--box-shadow: 0 2px 6px rgba(var(--gray), 25%), 0 8px 24px rgba(var(--gray), 33%),
+		0 16px 32px rgba(var(--gray), 33%);
+    }
+    body{
+        cursor:url('GnomadPointer.png'), auto;
+    }
+    main {
+        width: 45%;
+    }
+    .blog-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+    .blog-list li {
+        width: calc(50% - 1rem);
+    }
+    .blog-list li * {
+        text-decoration: none;
+        transition: 0.2s ease;
+        /*change this if selection cursor is added*/
+        cursor:url('GnomadPointer.png'), auto;
+    }
+    .blog-list li:first-child {
+        width: 100%;
+        margin-bottom: 1rem;
+        text-align: center;
+    }
+    .blog-list li:first-child img {
+        width: 100%;
+    }
+    .blog-list li:first-child .title {
+        font-size: 2.369rem;
+    }
+    .blog-list li img {
+        margin-bottom: 0.5rem;
+        border-radius: 1%;
+    }
+    .blog-list li a {
+        display: block;
+    }
+    .title {
+        margin: 0;
+        color: rgb(var(--black));
+        line-height: 1;
+    }
+    .date {
+        margin: 0;
+        color: rgb(var(--gray));
+    }
+    .blog-list li a:hover h4,
+    .blog-list li a:hover .date {
+        color: rgb(var(--accent));
+    }
+    .blog-list a:hover img {
+        box-shadow: var(--box-shadow);
+    }
+    .border-flourish{
+        position:fixed;
+        bottom:-50%;
+        width:100%;
+        height:auto;
+    }
+    .banner{
+        object-fit: cover;
+        border-radius: 0%;
+        width: 100%;
+    }
+
+    @media (max-width: 720px) {
+        .blog-list {
+            gap: 0.5em;
+        }
+        .blog-list li {
+            width: 100%;
+            text-align: center;
+        }
+        .blog-list li:first-child {
+            margin-bottom: 0;
+        }
+        .blog-list li:first-child .title {
+            font-size: 1.563em;
+        }
+    }
+</style>
