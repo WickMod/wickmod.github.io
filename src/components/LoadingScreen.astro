@@ -1,9 +1,13 @@
-    <div class="spiraldiv">
-        <img class="spiral" src="Spiral.jpg" >
+---
+import { Image } from 'astro:assets';
+import spinIMG from '/public/Spiral.jpg';
+---
+<div class="spiraldiv">
+	<Image src={spinIMG} alt="" class="spiral"/>
         <h1 class="centered" id="hireme">
             <p>HIRE<br><br>ME</p>
         </h1>
-    </div>
+</div>
 
 
 <style>
