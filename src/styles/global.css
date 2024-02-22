@@ -5,8 +5,8 @@
  */
 
  :root {
-	--sage:#d0dacd;
-	--dark-sage:#c5d1c0;
+	--sage:#c5e8ba;
+	--dark-sage:#98ba8a;
 	--red-orange:rgb(216, 91, 71);
 	--light-blue:#bb3804;
 	--light-blue-dark:#c96508;
@@ -14,6 +14,21 @@
 	--gray: 96, 115, 159;
 	--gray-light: 229, 233, 240;
 	--gray-dark: 34, 41, 57;
+
+	--gnomad-green:#93c45b;
+	--gnomad-dark-green:#4f8f33;
+	--gnomad-yellow:rgb(255, 187, 0);
+	--gnomad-red:#cc352b;
+	--gnomad-dark-red:#661111;
+	--gnomad-black: rgb(25, 25, 24);
+
+	--biomorgs-white:rgb(233, 232, 223);
+	--biomorgs-black:#140614;
+	--biomorgs-dark-black:#000000;
+	--biomorgs-yellow: #fbff00;
+	--biomorgs-pink: #ac0184;
+
+	--tppp-purple: #441429;
 
 	--text-color:var(--black);
 	--base-color:var(--sage);

@@ -1,33 +1,51 @@
 ---
 let {title,image,logoIMG, engineIMG, engineLang,desc1,desc2,desc3,target} = Astro.props;
+
 ---
 
 <a href={target}>
-    <div class="project-box">
-        <img src={logoIMG} alt="" class="logo-img">
-        <img src={engineIMG} alt="" class="engine-img">
-        <img src={image} alt={title} class="BG-img">
-        <p>{engineLang}</p>
-        <ul>
-            <li>{desc1}</li>
-            <li>{desc2}</li>
-            <li>{desc3}</li>
-        </ul>
+    <slot></slot>
+    <div class=`project-box ${title}`>
+        <div class="rhs">
+            <img src={engineIMG} alt="" class="engine-img">
+            <img src={image} alt={title} class="BG-img">
+            <h4 class="engine-lang">{engineLang}</h4>
+        </div>
+        <div class="lhs">
+            <p style="text-align: center;"><img src={logoIMG} alt="" class="logo-img"></p>
+            <ul>
+                <li>{desc1}</li>
+                <li>{desc2}</li>
+                <li>{desc3}</li>
+            </ul>
+        </div>
     </div>
 </a>
 
 <style>
+:root{
+    --accent:white;
+}
 .project-box{
     border-radius: 0.5%;
     position:relative;
 	box-shadow:  0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     height:100%;
 }
+
+.lhs{
+    margin:20px;
+}
+.rhs{
+    float: right;
+    width:auto;
+    height:100%;
+}
 .BG-img{
     border-radius: 0.5%;
-    width:100%;
-    height:auto;
-    object-fit:fill;
+    width:auto;
+    height:100%;
+    float: right;
 }
 
 h4{
@@ -35,39 +53,47 @@ h4{
     margin-bottom:0em;
 }
 ul{
+    
     margin-top:0em;
     margin-bottom:0em;
-    
     padding-top:0em;
     padding-bottom:0em;
 }
 a{
     text-decoration: none;
 }
-li{
-    color: rgba(var(--black), 100%);
-}
 .logo-img{
-    position: absolute;
-    left:0;
-    right:0;
-    margin:0.1em;   
-    width:35%;  
+    margin:1em; 
+    width:30%;  
     height:auto;
 }
 .engine-img{
     position: absolute;
-    bottom:45%;
+    bottom:80%;
     right:0%;
     margin-right:0.5em;
-    width:10%;
+    width:5%;
     height:auto;
 }
-p{
+.engine-lang{
     position: absolute;
-    bottom:32%;
+    bottom:0%;
     right:0%;
     margin-right:0.4em;
     height:auto;
     justify-content:right;
 }
+.project-box.Gnomad{
+    background-color: var(--gnomad-green);
+    color:var(--gnomad-black);
+}
+.project-box.Biomorgs{
+    background-color: var(--biomorgs-black);
+    color:var(--biomorgs-white);
+}
+.project-box.TPPP{
+    background-color:var(--tppp-purple  );
+
+}
+
+</style>

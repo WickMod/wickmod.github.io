@@ -50,6 +50,7 @@ const posts = (await getCollection('blog')).sort(
                     <li>Worked with UE5 blueprints to design and implement a base building system used by the enemy AI.</li>
                     <li>Designed and balanced interactions between resource gathering and base building features.</li>
                     <li>Used built in environment and foliage editors to create 3 playable maps.</li>
+                    <li>Create explosion system for destroyed machines.</li>
                 </ul>
             </div>
 		</main>
@@ -60,20 +61,14 @@ const posts = (await getCollection('blog')).sort(
 
 <style>
      :root {
-	--base-color:#140614;
-	--base-shadow:#000000;
-	--accent: #fbff00;
-	--accent-dark: #ff5100;
-	--black: 255, 255, 255;
-	--gray: 96, 115, 159;
-	--gray-light: 229, 233, 240;
-	--gray-dark: 200, 200, 200;
-	--gray-gradient: var(--base-shadow), var(--base-color);
-	--box-shadow: 0 2px 6px rgba(var(--gray), 25%), 0 8px 24px rgba(var(--gray), 33%),
-		0 16px 32px rgba(var(--gray), 33%);
+    --text-color:var(--biomorgs-white);
+	--base-color:var(--biomorgs-black);
+	--base-shadow:var(--biomorgs-dark-black);
+	--header-bg:var(--biomorgs-pink);
+	--accent: var(--biomorgs-yellow);
+	--accent-dark:var(--light-blue-dark);
     }
     body{
-        cursor:url('GnomadPointer.png'), auto;
     }
     main {
         width: 45%;
@@ -93,7 +88,6 @@ const posts = (await getCollection('blog')).sort(
         text-decoration: none;
         transition: 0.2s ease;
         /*change this if selection cursor is added*/
-        cursor:url('GnomadPointer.png'), auto;
     }
     .blog-list li:first-child {
         width: 100%;
@@ -115,7 +109,7 @@ const posts = (await getCollection('blog')).sort(
     }
     .title {
         margin: 0;
-        color: rgb(var(--black));
+        color: rgb(var(--text-color));
         line-height: 1;
     }
     .date {

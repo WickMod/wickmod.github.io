@@ -102,18 +102,11 @@ const posts = (await getCollection('blog')).sort(
 
 <style>
      :root {
-	--base-color:#93c45b;
-	--base-shadow:#4f8f33;
-    --header-bg: rgb(255, 187, 0);
-	--accent: #cc352b;
-	--accent-dark: #661111;
-	--black: 15, 18, 25;
-	--gray: 96, 115, 159;
-	--gray-light: 229, 233, 240;
-	--gray-dark: 34, 41, 57;
-	--gray-gradient: var(--base-shadow), var(--base-color);
-	--box-shadow: 0 2px 6px rgba(var(--gray), 25%), 0 8px 24px rgba(var(--gray), 33%),
-		0 16px 32px rgba(var(--gray), 33%);
+	--base-color:var(--gnomad-green);
+	--base-shadow:var(--gnomad-dark-green);
+    --header-bg: var(--gnomad-yellow);
+	--accent: var(--gnomad-red);
+	--accent-dark: var(--gnomad-dark-red);
 }
     body{
         cursor:url('GnomadPointer.png'), auto;
