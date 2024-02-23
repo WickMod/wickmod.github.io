@@ -7,6 +7,7 @@ import { getCollection } from 'astro:content';
 import FormattedDate from '../components/FormattedDate.astro';
 import { Image } from 'astro:assets';
 import logo from '/public/BiomorgsLogoTN.png';
+import screenshot from '/public/BiomorgsTN.jpg';
 const posts = (await getCollection('blog')).sort(
 	(a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
 );
@@ -28,7 +29,7 @@ const posts = (await getCollection('blog')).sort(
                     src="https://youtube.com/embed/jOFa_hshM4Q?autoplay=1&mute=1&controls=0">
                     </iframe>
                 </p> -->
-                <Image src={logo} alt=""/>
+                <p style="text-align: center; margin-top:-50px; margin-bottom:40px;"><Image src={logo} alt=""/></p>
                 <h5><i>Who</i> will defeat the ever expanding, solar system swallowing, galaxy gargling, freaky, evil Biomorgs!?!?!?!? </h5>
                 <p>These abominable alien astronauts have been on a been on a nonstop 
                     rampage across the reaches of the galaxy. Every planet in their path is conquered,
@@ -36,10 +37,11 @@ const posts = (await getCollection('blog')).sort(
                       super soldier sent deep into space to single handedly stop these aliens.
                     How? By kicking every single one of their asses (or equivalent thereof) 
                     and sending them back to the singularity they crawled out of!</p>
+                    <p style="text-align: center; "><Image style="width:70%;" src={screenshot} alt=""/></p>
                 <h4>What it is</h4>
                 <p> Biomorgs is a first person shooter game-prototype built in <b>Unreal Engine 5</b>. 
-                    While the 
-                    game where They are establishing their base through an AI driven RTS style system.
+                    The player must destroy all of the invasive aliens, but their numbers keep growing. The 
+                    longer it takes you to defeat one hive, the stronger the others grow. Each base 
                     Each level contains a standard map, with bases that evolve differently each time you play.
                      The player must choose which order to take out the bases in, employing as much or as little strategy as desired.
                       Cut off their resource drones? Sure! Sneak in and blow up their turrets?
