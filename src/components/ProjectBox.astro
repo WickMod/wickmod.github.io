@@ -13,7 +13,7 @@ let {title,image,logoIMG, engineIMG, engineLang,desc1,desc2,desc3,target} = Astr
         </div>
         <div class="lhs">
             <p style="text-align: center;"><img src={logoIMG} alt="" class="logo-img"></p>
-            <ul>
+            <ul >
                 <li>{desc1}</li>
                 <li>{desc2}</li>
                 <li>{desc3}</li>
@@ -29,19 +29,24 @@ let {title,image,logoIMG, engineIMG, engineLang,desc1,desc2,desc3,target} = Astr
 .project-box{
     border-radius: 0.5%;
     position:relative;
-	box-shadow:  0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     height:100%;
+    width:100%;
+    padding:0em;
 }
 
 .lhs{
     margin:20px;
+    height:100%;
+    width:100%;
 }
 .rhs{
     float: right;
-    width:auto;
+    width:50%;
     height:100%;
 }
 .BG-img{
+    object-fit: cover;
     border-radius: 0.5%;
     width:auto;
     height:100%;
@@ -63,9 +68,10 @@ a{
     text-decoration: none;
 }
 .logo-img{
-    margin:1em; 
+    margin:1%; 
+    padding:1%;
     width:30%;  
-    height:auto;
+    height:10%;
 }
 .engine-img{
     position: absolute;
@@ -96,7 +102,14 @@ a{
     background-color:var(--tppp-purple  );
 
 }
-li{
-    font-size:1.2em;
+:hover .project-box{
+    opacity:80%;
 }
+li{
+    font-size:2.5vmin;
+}
+ul{
+        
+}
+
 </style>

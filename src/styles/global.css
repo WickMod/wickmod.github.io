@@ -70,7 +70,7 @@ body {
 	background-color: var(--base-color);
 }
 main {
-	width: 720px;
+	width: 60%;
 	max-width: calc(100% - 2em);
 	margin: auto;
 	padding: 3em 1em;

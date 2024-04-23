@@ -1,14 +1,12 @@
 ---
 import HeaderLink from './HeaderLink.astro';
-import LoadingScreen from '../../src/components/LoadingScreen.astro';
 import { SITE_TITLE } from '../consts';
 ---
 
 <header>
-	<LoadingScreen></LoadingScreen>
 	<nav>
 		<h1><a href="/">{SITE_TITLE}</a></h1>
-		<div class="internal-links">
+		<div class="internal-links">	
 			<HeaderLink href="/">Projects</HeaderLink>
 			<!--<HeaderLink href="/blog">Dev Log</HeaderLink> -->
 			<HeaderLink href="/concept-art">Concept Art</HeaderLink>

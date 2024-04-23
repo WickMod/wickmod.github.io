@@ -5,7 +5,6 @@ import Footer from '../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 import { getCollection } from 'astro:content';
 import FormattedDate from '../components/FormattedDate.astro';
-import LoadingScreen from '../components/LoadingScreen.astro';
 
 const posts = (await getCollection('blog')).sort(
 	(a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
@@ -14,14 +13,14 @@ const posts = (await getCollection('blog')).sort(
 
 <!doctype html>
 <html lang="en">
-    <LoadingScreen></LoadingScreen>
 	<head>
 		<BaseHead title="Concept Art" description={SITE_DESCRIPTION} />
 	</head>
 	<body>
 		<Header />
 		<main>
-            <h1>Concept Art</h1>
+            <h1 style=" margin-bottom:20px;text-align: center;">Concept Art</h1>
+
             <p style="text-align:center"> <img src="ConceptArtHome.jpg" style="width:80%" alt=""> </p>
             <p>
                 While I've been learning to make video games, I've also been pursuing my pasion for art.
