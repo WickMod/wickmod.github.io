@@ -28,6 +28,15 @@
 	--biomorgs-yellow: #fbff00;
 	--biomorgs-pink: #ac0184;
 
+	--cleanupclash-white: rgb(255, 255, 255);
+	--cleanupclash-black:rgb(4,7,7);
+	--cleanupclash-red:rgba(239,73,35,255);
+	--cleanupclash-dark-blue:rgba(18,51,77,255);
+	--cleanupclash-orange:rgba(247,153,105,255);
+	--cleanupclash-dark-tan:rgba(247,153,105,255);
+	--cleanupclash-light-tan:rgba(254,234,211,255);
+	--cleanupclash-green:rgba(254,234,211,255);
+
 	--tppp-purple: #441429;
 
 	--text-color:var(--black);

@@ -1,0 +1,82 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import { getCollection } from 'astro:content';
+import FormattedDate from '../components/FormattedDate.astro';
+import { Image } from 'astro:assets';
+import logo from '/public/CleanupClashLogoTN.png';
+import screenshot from '/public/CleanupClashTN.png';
+const posts = (await getCollection('blog')).sort(
+	(a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
+);
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title="Cleanup Clash" description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<Header/>
+		<main>
+            <div>
+                <p style="margin-top:20px;"></p> 
+                <p style="text-align: center; margin-top:-50px; margin-bottom:40px;"><Image src={logo} alt=""/></p>
+
+                <p style="text-align:center">
+                    <iframe width="640" height="360" frameborder="0"
+                    src="https://youtube.com/embed/SDuF4-dBG4A?autoplay=1&mute=1&loop=1">
+                    </iframe>
+                </p> 
+                </p>
+                <h4>What it is</h4>
+                <p>Cleanup Clash is a 2-4 player team-based combat party collectathon.
+                    This game was made over the course of a week for a Shawnee State Uniersity game jam.  </p>
+
+                <h4>What I did</h4>
+                <p>I took on the role of generalist gameplay programmer for this project.</p>
+                <ul class="bullet-list">
+                    <li>Implemented Lever pulling animation code</li>
+                    <li>Defined spawn logic for the raccoon AI</li>
+                </ul>
+            </div>
+		</main>
+		<Footer />
+	</body>
+</html>
+
+
+<style>
+     :root {
+    --text-color:var(--cleanupclash-black);
+	--base-color:var(--cleanupclash-light-tan);
+	--base-shadow:var(--cleanupclash-dark-tan);
+	--header-bg:var(--cleanupclash-green);
+	--accent: var(--cleanupclash-red);
+	--accent-dark:var(--cleanupclash-red);
+    }
+    body{
+    }
+    main {
+        width: 45%;
+    }
+    li{
+        color:var(--cleanupclash-black);
+    }
+    .title {
+        margin: 0;
+        color: rgb(var(--text-color));
+        line-height: 1;
+    }
+    .date {
+        margin: 0;
+        color: rgb(var(--gray));
+    }
+    .banner{
+        object-fit: cover;
+        border-radius: 0%;
+        width: 100%;
+    }
+</style>

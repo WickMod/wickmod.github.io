@@ -5,6 +5,10 @@ import Footer from '../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 import { getCollection } from 'astro:content';
 import FormattedDate from '../components/FormattedDate.astro';
+import { Image } from 'astro:assets';
+import HOUSE from '/public/ConceptArtHome.jpg';
+import VEHICLE from '/public/ConceptArtVehicle.jpg';
+
 
 const posts = (await getCollection('blog')).sort(
 	(a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
@@ -21,7 +25,7 @@ const posts = (await getCollection('blog')).sort(
 		<main>
             <h1 style=" margin-bottom:20px;text-align: center;">Concept Art</h1>
 
-            <p style="text-align:center"> <img src="ConceptArtHome.jpg" style="width:80%" alt=""> </p>
+            <Image src={HOUSE} alt="" class=""></Image>
             <p>
                 While I've been learning to make video games, I've also been pursuing my pasion for art.
                 Naturally, my problem solving mindset and artistic vision drew me to concept art.
@@ -30,7 +34,7 @@ const posts = (await getCollection('blog')).sort(
                 My creative experience allows me to work closely and communicate effectively with artist.
                 My creative eye helps me design and implement tools for art pipelines and procedural content.
             </p>
-            <p style="text-align:center"> <img src="ConceptArtVehicle.jpg" style="width:80%" alt=""> </p>
+            <Image src={VEHICLE} alt="" class=""></Image>
             <p></p>
             <p>
                 Find the rest of my <b>concept art</b> portfolio <b><a href="https://elijah_wickerham.artstation.com/"target="_blank"> here!</a></b><br>
